@@ -35,7 +35,11 @@ class collectd::plugin::jolokia (
   }
 
   package { 'pyjolokia':
-    ensure => $collectd::plugin::jolokia::ensure,
-    notify => Service['collectd'];
+    ensure   => $collectd::plugin::jolokia::ensure,
+    notify   => Service['collectd'],
+    provider => 'pip',
+    require  => Package['python-pip'],
   }
+
+  ensure_packages('python-pip')
 }
