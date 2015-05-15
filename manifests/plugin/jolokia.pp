@@ -1,6 +1,6 @@
 class collectd::plugin::jolokia (
   $ensure   = present,
-  $path     = '/opt/collectd-elasticsearch'
+  $path     = '/opt/collectd-jolokia'
 ) {
 
   include collectd::params
